@@ -45,23 +45,31 @@ resume_screening.ipynb    Full notebook: cleaning → EDA → training → evalu
 ai_resume_screening.csv   Dataset
 app.py                    Streamlit web app for screening a single candidate
 models/                   Saved model, scaler and metadata (education mapping, feature order)
-requirements.txt          Python packages
+requirements.txt          Packages for the web app (used by Streamlit Cloud)
+requirements-notebook.txt Extra packages for the notebook (includes requirements.txt)
 ```
 
 ## How to run
 
 ```bash
 python -m venv venv
-venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 Web app:
 
 ```bash
+venv\Scripts\python.exe -m pip install -r requirements.txt
 venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-Notebook: open `resume_screening.ipynb` in Jupyter and run all cells. This also retrains the model and saves it again to `models/`.
+Notebook:
+
+```bash
+venv\Scripts\python.exe -m pip install -r requirements-notebook.txt
+venv\Scripts\python.exe -m notebook
+```
+
+Open `resume_screening.ipynb` and run all cells. This also retrains the model and saves it again to `models/`.
 
 ## Limitations
 
